@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SearchView" parent="">
+        <item name="android:editTextColor">@color/cpTextDark</item>
+        <item name="android:textColorHint">@color/cpHelpText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

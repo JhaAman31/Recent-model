@@ -6,18 +6,19 @@
     <data>
 
     </data>
-
-
+    
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/main"
+        android:background="@color/cpWhite"
         tools:context=".Chats.presentation.activity.ChattingActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/discovery_profile_app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/cpWhite"
             app:elevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,67 +27,83 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/discovery"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/white_shade"
-                android:elevation="4dp">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/back_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/ic_back"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_pic"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/ic_profile_circle"
-                    app:civ_border_color="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/back_btn"
-                    app:layout_constraintStart_toEndOf="@id/back_btn"
-                    app:layout_constraintTop_toTopOf="@id/back_btn" />
+                    android:layout_marginStart="20dp"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back_arrow" />
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:foreground="@drawable/stroke_drawable"
+                    android:background="@drawable/ic_user_defolt_avator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/back_btn"
+                    app:srcCompat="@drawable/ic_user_defolt_avator" />
 
-                <TextView
-                    android:id="@+id/user_name"
-                    app:civ_border_width="1dp"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:background="@null"
-                    android:inputType="textNoSuggestions"
-                    android:letterSpacing="0.02"
-                    android:text="Aman Jha"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium"
-                    app:layout_constraintBottom_toBottomOf="@id/profile_pic"
-                    app:layout_constraintEnd_toStartOf="@id/imageView19"
-                    app:layout_constraintStart_toEndOf="@id/profile_pic"
-                    app:layout_constraintTop_toTopOf="@id/profile_pic"
-                    tools:text="Aman Jha" />
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/profilePic"
+                    app:layout_constraintStart_toStartOf="@+id/profilePic"
+                    app:layout_constraintTop_toBottomOf="@+id/profilePic">
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:inputType="textNoSuggestions"
+                        android:letterSpacing="0.02"
+                        android:text="Aman Jha"
+                        android:textColor="@color/cpTextDark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/back_btn"
+                        app:layout_constraintEnd_toEndOf="@+id/profilePic"
+                        app:layout_constraintStart_toStartOf="@+id/profilePic"
+                        app:layout_constraintTop_toBottomOf="@+id/profilePic"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                    <ImageView
+                        android:id="@+id/imageView19"
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_name"
+                        app:layout_constraintStart_toEndOf="@+id/user_name"
+                        app:layout_constraintTop_toTopOf="@+id/user_name"
+                        app:srcCompat="@drawable/ic_back_right" />
+                </LinearLayout>
 
 
                 <ImageView
-                    android:id="@+id/imageView19"
+                    android:id="@+id/chat_action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="15dp"
+                    android:padding="1dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/back_btn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_menu"
-                    app:tint="@color/black" />
-
+                    app:layout_constraintTop_toTopOf="@+id/back_btn"
+                    app:srcCompat="@drawable/ic_dot" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -94,13 +111,12 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <com.airbnb.epoxy.EpoxyRecyclerView
-            android:id="@+id/message_recycler"
+            android:id="@+id/messageRecycler"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:nestedScrollingEnabled="false"
             android:overScrollMode="never"
             android:paddingTop="35dp"
-            android:paddingBottom="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constrainedHeight="true"
@@ -111,7 +127,26 @@
             app:layout_constraintTop_toBottomOf="@+id/discovery_profile_app_bar"
             app:reverseLayout="true" />
 
-
+        <TextView
+            android:id="@+id/date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/corner_background"
+            android:gravity="center"
+            android:padding="8dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#000"
+            android:textIsSelectable="true"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/messageRecycler"
+            tools:text="Hello"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/text_gchat_indicator"
@@ -122,22 +157,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
             android:layout_width="match_parent"
-            android:layout_margin="7dp"
-            android:layout_height="55dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cpWhite"
+            android:fitsSystemWindows="true"
+            android:paddingVertical="7dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <EditText
                 android:id="@+id/message_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/card_view_bag"
-                android:elevation="2dp"
-                android:layout_toStartOf="@id/send_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="7dp"
+                android:layout_toStartOf="@+id/button_send_emoji"
+                android:background="@drawable/card_view_border"
+                android:elevation="0dp"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:hint="Write a message..."
@@ -147,49 +186,61 @@
                 android:maxLength="2000"
                 android:maxLines="6"
                 android:minHeight="45dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="5dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="50dp"
                 android:stateListAnimator="@null"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textColorHint="#B1000000"
+                android:textColor="@color/cpTextDark"
+                android:textColorHint="@color/cpHelpText"
                 android:textSize="16sp"
-                android:layout_weight="1"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_send_emoji"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                tools:ignore="Autofill" />
 
 <!--            <com.vanniktech.emoji.EmojiButton-->
 <!--                android:id="@+id/emojiButton"-->
-<!--                android:layout_width="24dp"-->
-<!--                android:layout_height="24dp"-->
-<!--                android:layout_marginStart="7dp"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginStart="10dp"-->
 <!--                android:background="@drawable/ic_emoji"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/message_input"-->
+<!--                app:layout_constraintHorizontal_bias="1.0"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/message_input"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/message_input" />-->
 
-            <ImageView
-                android:id="@+id/send_btn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_send"
-                android:layout_marginStart="10dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/card_send"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/send_message"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
                 android:gravity="center"
-                android:letterSpacing=".1"
-                android:padding="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="15dp"
                 android:text="Send"
+                android:textColor="@color/cpPrimeBlue"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@id/message_input"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/message_input"
-                app:layout_constraintTop_toTopOf="@id/message_input"
-                app:layout_constraintVertical_bias="1.0"
-                app:tint="@color/white" />
+                app:layout_constraintEnd_toEndOf="@id/message_input"
+                app:layout_constraintTop_toTopOf="@id/message_input" />
 
-        </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_send_emoji"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_like_active"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/message_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/message_input" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </layout>

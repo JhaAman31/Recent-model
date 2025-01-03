@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class EpoxyChatController(private val currentUserId: Int) : EpoxyController() {
+class EpoxyChatController(private val currentUserId: Int,private val profile:String) : EpoxyController() {
 
     var messages: List<Message> = emptyList()
 
@@ -18,13 +18,12 @@ class EpoxyChatController(private val currentUserId: Int) : EpoxyController() {
                 SentMsgEpoxyModel_()
                     .id(message.timestamp)
                     .message(message.content)
-                    .messageTime(formatTimestamp(message.timestamp))
                     .addTo(this)
             } else {
                 ReceiveMsgEpoxyModel_()
                     .id(message.timestamp)
                     .message(message.content)
-                    .messageTime(formatTimestamp(message.timestamp))
+                    .profile(profile)
                     .addTo(this)
             }
         }

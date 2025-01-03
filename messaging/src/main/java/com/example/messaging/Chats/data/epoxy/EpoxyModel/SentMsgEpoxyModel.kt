@@ -5,7 +5,6 @@ import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
-import com.bumptech.glide.Glide
 import com.example.messaging.R
 import com.example.messaging.databinding.ItemSentMessageBinding
 
@@ -18,22 +17,13 @@ abstract class SentMsgEpoxyModel : EpoxyModelWithHolder<SentMsgEpoxyModel.ViewHo
     @EpoxyAttribute
     lateinit var message: String
 
-    @EpoxyAttribute
-    lateinit var profile: String
-
-    @EpoxyAttribute
-    lateinit var userName: String
 
     @EpoxyAttribute
     lateinit var messageTime: String
 
     override fun bind(holder: ViewHolder) {
-        holder.binding.messageText.text = message
-        holder.binding.timestamp.text = messageTime
-//        holder.binding.senderName.text = userName
+        holder.binding.message.text = message
 
-//        Glide.with(holder.binding.senderName).load(profile)
-//            .placeholder(R.drawable.ic_profile_circle).into(holder.binding.profileImage)
     }
 
     class ViewHolder : EpoxyHolder() {

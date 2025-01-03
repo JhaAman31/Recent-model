@@ -1,4 +1,12 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search_C">Find the creator who can help</string>
+    <string name="search_H_V_T">from million of creator, specialist and professional.</string>
+    <string name="search_H_C_T">from every corner around the world.</string>
+    <string name="search_here">Search</string>
+    <string name="search_here_name">Search by name</string>
+    <string name="search_cancel">Cancel</string>
+    <string name="no_result_found">No result found</string>
 </resources>

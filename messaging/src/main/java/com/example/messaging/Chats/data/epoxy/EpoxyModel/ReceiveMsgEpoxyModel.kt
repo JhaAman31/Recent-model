@@ -23,19 +23,14 @@ abstract class ReceiveMsgEpoxyModel : EpoxyModelWithHolder<ReceiveMsgEpoxyModel.
     @EpoxyAttribute
     lateinit var profile: String
 
-    @EpoxyAttribute
-    lateinit var userName: String
 
-    @EpoxyAttribute
-    lateinit var messageTime: String
 
     override fun bind(holder: ViewHolder) {
-        holder.binding.messageText.text = message
-        holder.binding.timestamp.text = messageTime
-//        holder.binding.senderName.text = userName
+        holder.binding.message.text = message
 
-//        Glide.with(holder.binding.senderName).load(profile)
-//            .placeholder(R.drawable.ic_profile_circle).into(holder.binding.profileImage)
+
+        Glide.with(holder.binding.root.context).load(profile)
+            .placeholder(R.drawable.ic_profile_circle).into(holder.binding.userProfilePic)
     }
 
     class ViewHolder : EpoxyHolder() {

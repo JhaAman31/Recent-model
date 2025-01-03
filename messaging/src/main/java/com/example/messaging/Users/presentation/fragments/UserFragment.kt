@@ -58,6 +58,7 @@ class UserFragment : Fragment() {
         val intent = Intent(requireContext(), ChattingActivity::class.java).apply {
             putExtra("otherUserName", userName)
             putExtra("otherUserPic", userProfilePic)
+            putExtra("otherUserId",userId )
             putExtra("chatroomId", chatId)
         }
         startActivity(intent)
